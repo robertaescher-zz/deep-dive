@@ -2,10 +2,10 @@
 
 angular.module('deepDiveApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeQuestions = [];
+    $scope.questions = [];
 
-    $http.get('/api/questions').success(function(awesomeQuestions) {
-      $scope.awesomeQuestions = awesomeQuestions;
+    $http.get('/api/questions').success(function(questions) {
+      $scope.questions = questions;
     });
 
     $scope.addQuestion = function() {
