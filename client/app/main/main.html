@@ -1,28 +1,229 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+   <form action="" method="post">
+        <div class="sheet-box-feedback sheet-box">
+               <div class="row">
+                    <div class="col-md-7">
+                    <h4><b> General questions (1/4)</b></h4>
+                    </div>
+                    <div class="col-md-5 rating-block">
+                       <p class="pull-left">
+                        Didn't like it at all
+                       </p>
+                       <p class="pull-right">
+                        Liked it a lot
+                       </p>
+                    </div>
+               </div>
+            <legend></legend>
+            <fieldset>
+            <div class="row">
+                <div class="col-md-7">
+                <label> How would you assess the event you participated in?  </label>
+                 </div>
+            
+               <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios1" value="1" data-toggle="radio" >
+                    <input type="radio" name="optionsRadios1" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios1" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios1" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios1" value="5" data-toggle="radio">
+               </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                <label>How would you assess the location? </label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios2" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios2" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios2" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios2" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios2" value="5" data-toggle="radio">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                <label>How would you assess the accommodation? </label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios3" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios3" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios3" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios3" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios3" value="5" data-toggle="radio">
+                </div>
 
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                <label>How would you assess the quality of the materials you have received? </label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios4" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios4" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios4" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios4" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios4" value="5" data-toggle="radio">  
+              </div>
+            </div>        
+            </fieldset>
+            <br />
+            
+          <h4><b>Recommendations and sharing (2/4)</b></h4>
+            <legend></legend>
+            <fieldset>
+            <div class="row">
+                <div class="col-md-7">
+                 <label>Would you recommend the event to someone else? </label>
+              </div>
+          </div>
+          <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10">                
+                <div class="row">
+                    <div class="col-md-6">
+                    <label class="radio">
+                        <input class="" type="radio" name="optionsRadios5" value="3" data-toggle="radio">
+                        Yes, I definitely would.
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <label class="radio">
+                        <input class="" type="radio" name="optionsRadios5" value="1" data-toggle="radio">
+                        No, not at all. 
+                    </label>
+                    </div>
+                </div>
+                <label class="radio">
+                    <input type="radio" value="2" data-toggle="radio" name="optionsRadios5">
+                    Yes, but only if...
+                    <input type="text"  class="form-control" name="question5_onlyif"  placeholder="Add answer">
+                </label> 
+            </div>
+            </div>
+          <label>Would you recommend the location to someone else?</label>
+           <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10">
+
+                <div class="row">
+                    <div class="col-md-6">
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios6" value="3" data-toggle="radio">
+                        Yes, I definitely would.
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios6" value="1" data-toggle="radio">
+                        No, not at all.
+                    </label>
+                    </div>
+                </div>
+                <label class="radio">
+                    <input type="radio" name="optionsRadios6" value="2" data-toggle="radio">
+                    Yes, but only if...
+                    <input class="form-control" name="question6_onlyif" placeholder="Add answer"/>
+                </label>
+
+            </div>
+            </div> 
+          </fieldset>
+          <br>
+            <div class="row">
+                <div class="col-md-7">
+                    <h4><b>Personal development (3/4)</b></h4>
+                </div>
+                <div class="col-md-5 rating-block">
+                       <p class="pull-left">
+                        Strongly Disagree
+                       </p>
+                       <p class="pull-right">
+                        Strongly Agree
+                       </p>
+                </div>
+            </div>
+            <legend></legend>
+            <fieldset>
+            <div class="row">
+                <div class="col-md-7">
+                <label>I have a better understanding of my strengths and weaknesses.</label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios7" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios7" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios7" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios7" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios7" value="5" data-toggle="radio">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-7">
+                <label>I will improve my daily routine.</label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios8" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios8" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios8" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios8" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios8" value="5" data-toggle="radio">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                <label>I will be more focused. </label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios9" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios9" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios9" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios9" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios9" value="5" data-toggle="radio">                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                <label>I will improve more open to new suggestions and directions.</label>
+                </div>
+                <div class="col-md-5 radio-block">
+                    <input type="radio" name="optionsRadios10" value="1" data-toggle="radio">
+                    <input type="radio" name="optionsRadios10" value="2" data-toggle="radio">
+                    <input type="radio" name="optionsRadios10" value="3" data-toggle="radio">
+                    <input type="radio" name="optionsRadios10" value="4" data-toggle="radio">
+                    <input type="radio" name="optionsRadios10" value="5" data-toggle="radio">
+                </div>
+            </div>
+            </fieldset>
+            <br />
+            <div class="row">
+                <div class="col-md-7">
+                <h4><b> Feedback for organisers (4/4)</b></h4>
+                </div>
+            </div>
+            <legend></legend>
+            <fieldset>
+                <label>What was the best part of the event for you?</label>
+                <input class="form-control" name="question13" placeholder="Add answer">
+                <label>What was the worst part of the event for you? </label>
+                <input class="form-control" name="question14" placeholder="Add answer">
+                <label>How could we make the event a better experience?</label>
+                <input class="form-control" name="question15" placeholder="Add answer">
+            <br>
+            </fieldset>
+
+        </div>
+        <br>
+        
+        <input class="sheet-box-submit pull-right" type="submit" value="Save Feedback" name="commit">
+
+   </form>
+   
+
+</div>
+<div class="span1"></div>
+</div>
+</div>
