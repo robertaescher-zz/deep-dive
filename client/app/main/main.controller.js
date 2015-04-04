@@ -2,21 +2,21 @@
 
 angular.module('deepDiveApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.awesomeQuestions = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    $http.get('/api/questions').success(function(awesomeQuestions) {
+      $scope.awesomeQuestions = awesomeQuestions;
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
+    $scope.addQuestion = function() {
+      if($scope.newQuestion === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $http.post('/api/questions', { name: $scope.newQuestion });
+      $scope.newQuestion = '';
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.deleteThing = function(question) {
+      $http.delete('/api/questions/' + question._id);
     };
   });

@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 
+var Question = require('../api/question/question.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -27,5 +28,18 @@ Thing.find({}).remove(function() {
   },{
     name : 'Deployment Ready',
     info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
+  });
+});
+
+Question.find({}).remove(function() {
+  Question.create({
+    statement : 'What is the main impact of these challenges for yourself?',
+    options: [{ 
+      opt1: 'Falta de organização/atribuição de tarefas', 
+      opt2: 'É difícil delegar responsabilidades', 
+      opt3: 'Sobrecarga de trabalho', 
+      opt4: 'Dificulta o meu trabalho', 
+      opt5: 'Falta de planejamento/metas claras' 
+    }],
   });
 });
