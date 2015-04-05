@@ -7,7 +7,7 @@
 <div class="row">
 <div class="col-md-1"></div>
 <div class="col-md-10">
-   <form action="" method="post">
+   <form  ng-submit="generateDash()">
         <div class="sheet-box-feedback sheet-box" >
                
             
@@ -24,13 +24,36 @@
           <div class="col-md-2"></div>
           <div class="col-md-10">                
                 <div class="row" >
-                    <div class="col-md-6" ng-repeat="opt in question.options2">
-                    <label class="radio">
-                        <input class="" type="radio" name="optionsRadios5" value="3" data-toggle="radio">
-                        {{opt}}
-                    </label>
+                    <div class="col-md-6">
+                        <label class="radio">
+                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt1}}" data-toggle="radio" ng-model="option">
+                            {{question.options2.opt1}}
+                        </label>
                     </div>
-                    
+                    <div class="col-md-6">
+                        <label class="radio">
+                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt2}}" data-toggle="radio" ng-model="option">
+                            {{question.options2.opt2}}
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="radio">
+                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt3}}" data-toggle="radio" ng-model="option">
+                            {{question.options2.opt3}}
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="radio">
+                            <input class="" type="radio" name="optionsRadios5" ng-value="answers" data-toggle="radio" ng-model="answers.option">
+                            {{question.options2.opt4}}
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="radio">
+                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt5}}" data-toggle="radio" ng-model="option">
+                            {{question.options2.opt5}}
+                        </label>
+                    </div>
                 </div>
                 <label class="radio">
                     <input type="radio" value="2" data-toggle="radio" name="optionsRadios5">
@@ -45,7 +68,7 @@
             
         <br>
         
-        <input class="sheet-box-submit pull-right" type="submit" value="Save Feedback" name="commit" ng-click="generateDash()">
+        <input class="sheet-box-submit pull-right" type="submit" value="Save Feedback" name="commit">
 
 
    </form>
