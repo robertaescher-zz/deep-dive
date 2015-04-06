@@ -17,7 +17,7 @@
                 <div class="question-loop" ng-repeat="question in questions">
             <div class="row" >
                 <div class="col-md-7">
-                 <label>{{question.statement}} </label>
+                 <label ng-model="question" value="question.statement">{{question.statement}} </label>
               </div>
           </div>
           <div class="row">
@@ -25,35 +25,12 @@
           <div class="col-md-10">                
                 <div class="row" >
                     <div class="col-md-6">
-                        <label class="radio">
-                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt1}}" data-toggle="radio" ng-model="option">
-                            {{question.options2.opt1}}
+                        <label class="radio" ng-repeat="opt in question.options2" for="opt">
+                            <input class="" type="radio" name="{{question._id}}" ng-value="{{opt}}" data-toggle="radio" ng-model="answer">
+                            {{opt}}
                         </label>
                     </div>
-                    <div class="col-md-6">
-                        <label class="radio">
-                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt2}}" data-toggle="radio" ng-model="option">
-                            {{question.options2.opt2}}
-                        </label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="radio">
-                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt3}}" data-toggle="radio" ng-model="option">
-                            {{question.options2.opt3}}
-                        </label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="radio">
-                            <input class="" type="radio" name="optionsRadios5" ng-value="answers" data-toggle="radio" ng-model="answers.option">
-                            {{question.options2.opt4}}
-                        </label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="radio">
-                            <input class="" type="radio" name="optionsRadios5" value="{{question.options2.opt5}}" data-toggle="radio" ng-model="option">
-                            {{question.options2.opt5}}
-                        </label>
-                    </div>
+                    
                 </div>
                 <label class="radio">
                     <input type="radio" value="2" data-toggle="radio" name="optionsRadios5">

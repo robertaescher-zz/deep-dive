@@ -21,9 +21,8 @@ angular.module('deepDiveApp')
     };
     
     $scope.generateDash = function() {
-        $scope.answers = $scope.questions;
-        $http.post('/api/answers', {questions: $scope.answers});
-    };
+        $http.post('/api/answers', {questions: $scope.questions});
+      };
   });
 
     
