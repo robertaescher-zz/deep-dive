@@ -8,10 +8,10 @@
           <h4><b>Awesome loop de questions</b></h4>
             <legend></legend>
             <fieldset>
-                <div class="question-loop" ng-repeat="question in questions">
+                <div class="question-loop">
             <div class="row" >
                 <div class="col-md-7">
-                 <label ng-model="question" value="question.statement">{{question.statement}} </label>
+                 <label ng-model ="question_id">{{questions[0].statement}} </label>
               </div>
           </div>
           <div class="row">
@@ -19,9 +19,42 @@
           <div class="col-md-10">                
                 <div class="row" >
                     <div class="col-md-6">
-                        <label class="radio" ng-repeat="opt in question.options2" for="opt">
-                            <input class="" type="radio" name="{{question._id}}" ng-value="{{opt}}" data-toggle="radio" ng-model="answer.options2">
-                            {{opt}}
+                        <label class="radio" ng-model ="question_id" ng-value="{{questions[0]._id}}">
+                            <input type="radio" name="{{questions[0]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
+                            {{questions[0].choices[1].text}}
+                        </label>
+                        <label class="radio" name="{{questions[0].choices[2].text}}">
+                            <input type="radio" name="{{questions[0]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
+                            {{questions[0].choices[2].text}}
+                        </label>
+                        <label class="radio" ng-model ="question_id" ng-value="{{questions[0]._id}}">
+                            <input type="radio"  name="{{questions[0]._id}}" data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
+                            {{questions[0].choices[3].text}}
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="row" >
+                <div class="col-md-7">
+                 <label ng-model ="question_id">{{questions[1].statement}} </label>
+              </div>
+          </div>
+          <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10">                
+                <div class="row" >
+                    <div class="col-md-6">
+                        <label class="radio" >
+                            <input type="radio" name="{{questions[1]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
+                            {{questions[1].choices[1].text}}
+                        </label>
+                        <label class="radio" name="{{questions[1].choices[2].text}}" ng-model ="question_id" ng-value="{{questions[0]._id}}">
+                            <input type="radio" name="{{questions[1]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
+                            {{questions[1].choices[2].text}}
+                        </label>
+                        <label class="radio" ng-model ="question_id" ng-value="{{questions[1]._id}}">
+                            <input type="radio"  name="{{questions[1]._id}}" data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
+                            {{questions[1].choices[3].text}}
                         </label>
                     </div>
                     
@@ -39,7 +72,7 @@
             
         <br>
         
-        <input class="sheet-box-submit pull-right" type="submit" value="Save Feedback" name="commit">
+        <input class="sheet-box-submit pull-right" type="submit" name="commit">
    </form>
 
    <!-- TESTEEE DE POST!!!!!!!!!!!! -->

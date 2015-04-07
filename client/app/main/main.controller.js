@@ -2,8 +2,8 @@
 
 angular.module('deepDiveApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.questions = [];
-    $scope.answers = [];
+    // $scope.questions = [];
+    // $scope.answers = [];
 
     $http.get('/api/questions').success(function(questions) {
       $scope.questions = questions;
@@ -22,8 +22,13 @@ angular.module('deepDiveApp')
     };
     
     $scope.generateDash = function() { //Não funciona...
-        $http
-        .post('/api/answers', {options2: $scope.answer})
+    $scope.selectedAnswer = {
+      isUserAnswer: true,
+      question_id: $scope.questions[0]._id, 
+      answer: $scope.questions[0].choices[3].text
+    };
+    $http
+        .post('/api/answers', {selectedAnswer:[$scope.selectedAnswer]})
         .success(function(data){
             console.log('AAAAAA...SUCESSO');
         })
@@ -34,7 +39,7 @@ angular.module('deepDiveApp')
 
     $scope.submit = function() { //Funciona
     $http
-        .post('/api/answers', {teste: $scope.answer.teste})
+        .post('/api/answers', {isUserAnswer: $scope.answer.teste})
         .success(function(data){
             console.log('AAAAAA...SUCESSO');
         })

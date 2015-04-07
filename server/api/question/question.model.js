@@ -5,13 +5,33 @@ var mongoose = require('mongoose'),
 
 var QuestionSchema = new Schema({
   statement: String,
-  options2: { 
-  	opt1: String, 
-  	opt2: String, 
-  	opt3: String, 
-  	opt4: String, 
-  	opt5: String 
-  }
+  choices: [
+	  	// {
+	  	// 	_id: Schema.Types.ObjectId,
+	  	// 	text: String,
+	   //      isUserAnswer: Boolean
+	   //  }, 
+	   //  {
+	  	// 	_id: Schema.Types.ObjectId,
+	  	// 	text: String,
+	   //      isUserAnswer: Boolean
+	   //  },
+	   //  {
+	  	// 	_id: Schema.Types.ObjectId,
+	  	// 	text: String,
+	   //      isUserAnswer: Boolean
+	   //  }, 
+	   //  {
+	  	// 	_id: Schema.Types.ObjectId,
+	  	// 	text: String,
+	   //      isUserAnswer: Boolean
+	   //  },
+	   //  {
+	  	// 	_id: Schema.Types.ObjectId,
+	  	// 	text: String,
+	   //      isUserAnswer: Boolean
+	   //  }
+    ]
 });
 
 module.exports = mongoose.model('Question', QuestionSchema);

@@ -32,26 +32,53 @@ Thing.find({}).remove(function() {
 });
 
 Question.find({}).remove(function() {
-  Question.create(
-  {
+  Question.create({
     statement : 'What is the main impact of these challenges for yourself?',
-    options2: { 
-      opt1: 'Falta de organização/atribuição de tarefas', 
-      opt2: 'É difícil delegar responsabilidades', 
-      opt3: 'Sobrecarga de trabalho', 
-      opt4: 'Dificulta o meu trabalho', 
-      opt5: 'Falta de planejamento/metas claras' 
-    }
-  }, 
-  {
-    statement : 'Teste',
-    options2: { 
-      opt1: 'Falta de organização/atribuição de tarefas', 
-      opt2: 'É difícil delegar responsabilidades', 
-      opt3: 'Sobrecarga de trabalho', 
-      opt4: 'Dificulta o meu trabalho', 
-      opt5: 'Falta de planejamento/metas claras' 
-    }
-  } 
+    choices : [{
+                    _id: '',
+                    text: 'Falta de organização/atribuição de tarefas',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Falta de organização/atribuição de tarefas',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Sobrecarga de trabalho',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Dificulta o meu trabalho',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Falta de planejamento/metas claras',
+                    isUserAnswer: false
+                  }]
+            
+  }, {statement : 'HOW is the main impact of these challenges for yourself?',
+    choices : [{
+                    _id: '',
+                    text: 'Falta de organização/atribuição de tarefas',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Falta de organização/atribuição de tarefas',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Sobrecarga de trabalho',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Dificulta o meu trabalho',
+                    isUserAnswer: false
+                  },{
+                    _id: '',
+                    text: 'Falta de planejamento/metas claras',
+                    isUserAnswer: false
+                  }]
+            
+  }
   );
 });
