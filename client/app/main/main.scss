@@ -1,33 +1,4 @@
-.thing-form {
-    margin: 20px 0;
-}
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
-}
-
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
-}
-
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
-}
 
 //custom css
 /* iCheck plugin Flat skin, blue
@@ -41,7 +12,7 @@
     padding: 0;
     width: 20px;
     height: 20px;
-    background: url(assets/images/blue.png) no-repeat;
+    background: url(../../assets/images/blue.png) no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -81,14 +52,14 @@
        only screen and (min-device-pixel-ratio: 1.5) {
     .icheckbox_flat-blue,
     .iradio_flat-blue {
-        background-image: url(assets/images/blue@2x.png);
+        background-image: url(../../assets/images/blue@2x.png);
         -webkit-background-size: 176px 22px;
         background-size: 176px 22px;
     }
 }
 
 .fixed-background-feedback{
-  background: url("../img/02.jpg") no-repeat fixed; 
+  background: url("../../assets/images/02.jpg") no-repeat fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -163,13 +134,13 @@
 .sheet-box-feedback > .checkbox .icons, .radio .icons{
     line-height: 30px;
 } 
-.sheet-box-feedback > fieldset .radio{
+.sheet-box-feedback > fieldset .radio, .radio-label{
     font-size: 14px;
     line-height: 30px;
     font-weight: 300;
 }
 .radio-block{
-    text-align: center;
+    text-align: left;
     min-width: 300px;
 }
 .radio-block .iradio_flat-blue{

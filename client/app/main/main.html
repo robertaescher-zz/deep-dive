@@ -1,26 +1,33 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-<div class="container">
+<!-- <div ng-include="'components/navbar/navbar.html'"></div>
+ --><div class="container">
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-10 col-md-offset-1">
       <div  class="sheet-box-feedback sheet-box">
+           <h1>{{title}}</h1>
+
         <form name="questionnnaire" ng-submit="saveResult(userAnswers)">
+        
+          <fieldset>
           <div ng-repeat="question in questionnaire">
             <div class="row question-statement" >
-              <div class="col-md-7">
-               <label ng-model ="question_id">{{question._id}}. {{question.question}}</label>
+              <div class="col-md-8 ">
+               <label ng-model ="question_id"><h4>{{question._id}}. {{question.question}}</h4></label>
              </div>
            </div>
-           <div class="questions-choices" ng-repeat="choice in question.choices">
+           
 
             <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <label for="_id{{question._id}}">
+              <div class="questions-choices" ng-repeat="choice in question.choices">
+              <div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 radio-block col-md-offset-1">
+                <label class="radio-label" for="_id{{question._id}}"  >
                   <input
                   name="_id{{question._id}}"
                   type="radio"
                   value="{{choice._id}}"
                   ng-model="question.userChoice"
-                  ng-change="checkUserMultiCorrectChoice(question._id, choice._id)"/>
+                  ng-change="checkUserMultiCorrectChoice(question._id, choice._id)"
+                  data-toggle="radio"
+                  />
                   {{choice.choice}}</label>
                 </div>
 
@@ -28,7 +35,7 @@
               </div>  
             </div>
 
-
+            </fieldset>
           </div>
           <button type="submit" id="saveResult"  class="sheet-box-submit pull-right"value="">Salvar questionário</button> 
         </form>
