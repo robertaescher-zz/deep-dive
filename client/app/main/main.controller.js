@@ -2,39 +2,56 @@
 
 angular.module('deepDiveApp')
   .controller('MainCtrl', function ($scope, $http) {
-    // $scope.questions = [];
-    // $scope.answers = [];
+    var createResults;
+    $scope.title = null; // questionnaire title
+    $scope.questionnaire = []; // questionnaire questions
+    $scope.results = []; // user results
 
-    $http.get('/api/questions').success(function(questions) {
-      $scope.questions = questions;
+    $http.get('/assets/data/questionnaires/questionnaire1.json').success(function(data) {
+      $scope.title = data.title;
+      $scope.questionnaire = data.questions;
+      createResults();
     });
 
-    $scope.addQuestion = function() {
-      if($scope.newQuestion === '') {
-        return;
+    // prepare array of result objects
+    createResults = function () {
+      var len = $scope.questionnaire.length;
+      for (var i = 0; i < len; i++) {
+        $scope.results.push({
+          _id:        $scope.questionnaire[i]._id,
+          answer:     $scope.questionnaire[i].answer,
+          userChoice: null,
+        });
       }
-      $http.post('/api/questions', { name: $scope.newQuestion });
-      $scope.newQuestion = '';
-    };
-
-    $scope.deleteThing = function(question) {
-      $http.delete('/api/questions/' + question._id);
     };
     
-    $scope.generateDash = function() { //Não funciona...
-    $scope.selectedAnswer = {
-      isUserAnswer: true,
-      question_id: $scope.questions[0]._id, 
-      answer: $scope.questions[0].choices[3].text
+    // used for multiple correct type questions
+    $scope.checkUserMultiCorrectChoice = function (question, userChoice) {
+      // create blank array
+      if ($scope.results[question - 1].userChoice === null) {
+        $scope.results[question - 1].userChoice = [];
+      }
+
+      // find choice, if not there the add or if there remove
+      var pos = $scope.results[question - 1].userChoice.indexOf(userChoice);
+      if (pos < 0) {
+        $scope.results[question - 1].userChoice.push(userChoice);
+        console.log('selecionei');
+
+      } else {
+        $scope.results[question - 1].userChoice.slice(pos, 1);
+      }
+      
+      return $scope.results;
     };
-    $http
-        .post('/api/answers', {selectedAnswer:[$scope.selectedAnswer]})
-        .success(function(data){
+    
+    
+
+     $scope.saveResult = function() {
+      $http.post('/api/results', { userAnswers: $scope.results }).success(function(data){
             console.log('AAAAAA...SUCESSO');
-        })
-        .error(function(data){
-            console.log('Error: ' + data);
         });
+      $scope.results = [];
     };
 
     $scope.submit = function() { //Funciona
