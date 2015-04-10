@@ -11,7 +11,7 @@
              </div>
            </div>
            <div class="questions-choices" ng-repeat="choice in question.choices">
-            
+
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <label for="_id{{question._id}}">
@@ -23,99 +23,14 @@
                   ng-change="checkUserMultiCorrectChoice(question._id, choice._id)"/>
                   {{choice.choice}}</label>
                 </div>
-                
+
 
               </div>  
             </div>
-            
+
 
           </div>
           <button type="submit" id="saveResult"  class="sheet-box-submit pull-right"value="">Salvar questionário</button> 
         </form>
 
       </div>
-
-
-   <form  ng-submit="generateDash()">
-        <div class="sheet-box-feedback sheet-box" >
-          <h4><b>Deep dive</b></h4>
-            <legend></legend>
-            <fieldset>
-                <div class="question-loop">
-            <div class="row" >
-                <div class="col-md-7">
-                 <label ng-model ="question_id">{{questions[0].statement}} </label>
-              </div>
-          </div>
-          <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10">                
-                <div class="row" >
-                    <div class="col-md-6">
-                        <label class="radio" ng-model ="question_id" ng-value="{{questions[0]._id}}">
-                            <input type="radio" name="{{questions[0]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
-                            {{questions[0].choices[1].text}}
-                        </label>
-                        <label class="radio" name="{{questions[0].choices[2].text}}">
-                            <input type="radio" name="{{questions[0]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
-                            {{questions[0].choices[2].text}}
-                        </label>
-                        <label class="radio" ng-model ="question_id" ng-value="{{questions[0]._id}}">
-                            <input type="radio"  name="{{questions[0]._id}}" data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
-                            {{questions[0].choices[3].text}}
-                        </label>
-                    </div>
-                    
-                </div>
-                <div class="row" >
-                <div class="col-md-7">
-                 <label ng-model ="question_id">{{questions[1].statement}} </label>
-              </div>
-          </div>
-          <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10">                
-                <div class="row" >
-                    <div class="col-md-6">
-                        <label class="radio" >
-                            <input type="radio" name="{{questions[1]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
-                            {{questions[1].choices[1].text}}
-                        </label>
-                        <label class="radio" name="{{questions[1].choices[2].text}}" ng-model ="question_id" ng-value="{{questions[0]._id}}">
-                            <input type="radio" name="{{questions[1]._id}}"  data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
-                            {{questions[1].choices[2].text}}
-                        </label>
-                        <label class="radio" ng-model ="question_id" ng-value="{{questions[1]._id}}">
-                            <input type="radio"  name="{{questions[1]._id}}" data-toggle="radio" ng-model="selectedAnswer" ng-value="selectedAnswer">
-                            {{questions[1].choices[3].text}}
-                        </label>
-                    </div>
-                    
-                </div>
-                <label class="radio">
-                    <input type="radio" value="2" data-toggle="radio" name="optionsRadios5">
-                    Yes, but only if...
-                    <input type="text"  class="form-control" name="question5_onlyif"  placeholder="Add answer">
-                </label> 
-            </div>
-            </div>
-           
-          </fieldset>
-          <br>
-            
-        <br>
-        
-        <input class="sheet-box-submit pull-right" type="submit" name="commit">
-   </form>
-
-   <!-- TESTEEE DE POST!!!!!!!!!!!! -->
-  <form ng-submit="submit()" ng-controller = "MainCtrl">
-    <input ng-model="answer.teste" type="text" id="teste_content" />
-    <button type="submit" id="add_answer" value="">SUPER TESTE</button> 
-  </form> 
-  <!-- TESTEEE DE POST!!!!!!!!!!!! -->
-
-</div>
-<div class="span1"></div>
-</div>
-</div>
