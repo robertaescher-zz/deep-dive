@@ -51,10 +51,19 @@ angular.module('deepDiveApp')
       $http.post('/api/results', { userAnswers: $scope.results }).success(function(data){
             console.log('AAAAAA...SUCESSO');
         });
-      $scope.results = {};
+      $scope.results = [];
     };
 
-
+    $scope.submit = function() { //Funciona
+    $http
+        .post('/api/answers', {isUserAnswer: $scope.answer.teste})
+        .success(function(data){
+            console.log('AAAAAA...SUCESSO');
+        })
+        .error(function(data){
+            console.log('Error: ' + data);
+        });
+  };
 
   });
 
