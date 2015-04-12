@@ -8,6 +8,21 @@ angular.module('deepDiveApp', [
   'ui.bootstrap'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    
+    $stateProvider
+      .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller: 'DashboardCtrl'
+      });
+
+    $stateProvider
+      .state('main', {
+        url: '/',
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl'
+      });
+
     $urlRouterProvider
       .otherwise('/');
 
