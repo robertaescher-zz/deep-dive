@@ -19,6 +19,7 @@ angular.module('deepDiveApp')
       for (var i = 0; i < len; i++) {
         $scope.results.push({
           _id:        $scope.questionnaire[i]._id,
+          question:   $scope.questionnaire[i].question,
           answer:     $scope.questionnaire[i].answer,
           userChoice: null,
         });

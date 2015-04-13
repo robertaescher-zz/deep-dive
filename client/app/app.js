@@ -5,7 +5,9 @@ angular.module('deepDiveApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angular.filter'
+
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     

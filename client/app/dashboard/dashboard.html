@@ -1,3 +1,118 @@
-<div class="col-md-12">
-This is the dashboard view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+			<div  class="sheet-box-feedback sheet-box">
+				<p> <b>Número de respostas: </b>{{countResult}} </p>
+
+				<!-- <input type="search" name="" id="input" class="form-control" placeholder="Digite a pergunta ou resposta aqui" ng-model="query">
+
+				<select id="input" class="form-control" required="required" ng-model="questionFilter">
+					<option value="null"> Selecione uma questão</option>
+					<option value="1"> Questão 1</option>
+					<option value="2"> Questão 2</option>
+					<option value="3"> Questão 3</option>
+					<option value="4"> Questão 4</option>
+					<option value="5"> Questão 5</option>
+					<option value="6"> Questão 6</option>
+					<option value="7"> Questão 7</option>
+					<option value="8"> Questão 8</option>
+					<option value="9"> Questão 9</option>
+				</select> -->
+
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">	
+						<h4>{{questionnaire[0].question}}</h4>
+
+						<p>Respostas</p>
+
+						<div class="loop-result" ng-repeat="result in results | filter: query">
+
+
+							<div class="loop-questions" ng-repeat="question in result.userAnswers | filter: query | filter: questionFilter | where: {_id: 0} | defaults: fallback">
+
+								
+
+								Resposta: {{question.userChoice[0]}}
+
+
+							</div>	
+
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>{{questionnaire[1].question}}</h4>
+						<p>Respostas</p>
+
+						<div class="loop-result" ng-repeat="result in results | filter: query  ">
+							
+							
+
+
+							<div class="loop-questions" ng-repeat="question in result.userAnswers | filter: query | filter: questionFilter | where: {_id: 1}| defaults: fallback">
+								
+								 {{question.userChoice[0]}}
+							</div>	
+
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>{{questionnaire[2].question}}</h4>
+						<p>Respostas</p>
+
+						<div class="loop-result" ng-repeat="result in results | filter: query ">
+							<div class="loop-questions" ng-repeat="question in result.userAnswers | filter: query | filter: questionFilter | where: {_id: 2}| defaults: fallback">
+								
+								 {{question.userChoice[0]}}
+							</div>
+
+							</div>	
+							
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>{{questionnaire[3].question}}</h4>
+						<p>Respostas</p>
+
+						<div class="loop-result" ng-repeat="result in results | filter: query ">
+							<div class="loop-questions" ng-repeat="question in result.userAnswers | filter: query | filter: questionFilter | where: {_id: 3}| defaults: fallback ">
+								
+								 {{question.userChoice[0]}}
+							</div>
+
+							</div>	
+							
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>{{questionnaire[4].question}}</h4>
+						<p>Respostas</p>
+
+						<div class="loop-result" ng-repeat="result in results | filter: query ">
+							<div class="loop-questions" ng-repeat="question in result.userAnswers | filter: query | filter: questionFilter | where: {_id: 4}| defaults: fallback ">
+								
+								 {{question.userChoice[0]}}
+							</div>
+
+							</div>	
+							
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>{{questionnaire[5].question}}</h4>
+						<p>Respostas</p>
+						<div class="loop-result" ng-repeat="result in results | filter: query ">
+							<div class="loop-questions" ng-repeat="question in result.userAnswers | filter: query | filter: questionFilter | where: {_id: 5}| defaults: fallback ">
+								
+								 {{question.userChoice[0]}}
+							</div>
+
+							</div>	
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>    
+
+
 </div>

@@ -20,7 +20,7 @@
                   type="radio"
                   value="{{choice._id}}"
                   ng-model="question.userChoice"
-                  ng-change="checkUserMultiCorrectChoice(question._id, choice._id)"/>
+                  ng-change="checkUserMultiCorrectChoice(question._id, choice.choice)"/>
                   {{choice.choice}}</label>
                 </div>
 
@@ -30,7 +30,9 @@
 
 
           </div>
-          <button type="submit" id="saveResult"  class="sheet-box-submit pull-right"value="">Salvar questionário</button> 
-        </form>
+          
+        
 
       </div>
+<button type="submit" id="saveResult"  class="sheet-box-submit pull-right"value="">Salvar questionário</button>
+</form> 
